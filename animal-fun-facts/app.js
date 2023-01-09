@@ -19,9 +19,18 @@ for (const animal in animals) {
       alt={animal}
       src={animals[animal].image}
       aria-label={animal}
-      role='button' 
+      role='button'
+      onClick={displayFact} 
     />
   )
+}
+let funFact = ''
+function displayFact(e) {
+  const animalName = e.target.alt
+  const optionalIndex = Math.floor(Math.random()
+  * animalName.facts.length)
+  funFact = animalName.facts[optionalIndex]
+  document.getElementById('funFact')
 }
 
 const animalFacts = (
@@ -30,6 +39,8 @@ const animalFacts = (
     <div className='animals'>
       {images}
     </div>
+    <p id={funFact}>
+    </p>
     <h1>
       {title === '' ? 'Click an animal for a fun fact' : title}
     </h1>
