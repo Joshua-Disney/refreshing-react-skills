@@ -26,11 +26,13 @@ for (const animal in animals) {
 }
 let funFact = ''
 function displayFact(e) {
-  const animalName = e.target.alt
+  const animalName = animals[e.target.alt]
   const optionalIndex = Math.floor(Math.random()
   * animalName.facts.length)
   funFact = animalName.facts[optionalIndex]
-  document.getElementById('funFact')
+  document.getElementById('fact').innerHTML = funFact
+  console.log('funFact: ', funFact)
+  return funFact
 }
 
 const animalFacts = (
@@ -39,8 +41,7 @@ const animalFacts = (
     <div className='animals'>
       {images}
     </div>
-    <p id={funFact}>
-    </p>
+    <p id='fact'>{funFact}</p>
     <h1>
       {title === '' ? 'Click an animal for a fun fact' : title}
     </h1>
