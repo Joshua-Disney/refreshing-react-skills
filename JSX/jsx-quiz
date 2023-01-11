@@ -1,0 +1,65 @@
+// Quiz Summary
+// 100%Great job!
+// 9 correct
+
+// 1: What is the correct way to attach the function yo to a click event?
+
+// let yo = () => {
+//   alert('Yo');
+// };
+
+// Answer: <button onClick={yo} ></button>
+
+
+// 2: What should you pass to ReactDOM.render() for its first argument?
+
+// Answer: ReactDOM.render() takes a JSX expression for its first argument.
+
+
+// 3: Place the following steps in the right order:
+
+// a. Changes on the real DOM cause the screen to change.
+// b. A JSX element renders.
+// c. The virtual DOM is compared to what it looked like before it updated to figure out which objects have changed.
+// d. The entire virtual DOM gets updated.
+// e. The changed objects, and the changed objects only, get updated on the real DOM.
+
+// Answer: b, d, c, e, a
+
+
+// 4: What’s a difference between a DOM object and a virtual DOM object?
+
+// Answer: Correct! The entire virtual DOM, without directly affecting any HTML, can be updated much more quickly than the regular DOM when a JSX element is rendered.
+
+
+// 5: What’s wrong with this code?
+
+// let skateboardDog = (
+//   <img src="alfie.jpg" />
+//   <h1>Hiya kids!  I'm a dog on a skateboard.</h1>
+// );
+
+// Answer: Correct! This expression is wrong because it has two outermost elements.
+
+
+// 6: What should you pass to ReactDOM.render() for its second argument?
+
+// Answer: That’s right, the second argument should be a selector that matches an HTML element!
+
+
+// 7: Which will render 100 to the screen?
+
+// Answer: ReactDOM.render(
+//     <h1>{10 * 10}</h1>,
+//     document.getElementById('app')
+// );
+
+
+// 8: Can a web browser read JSX directly?
+
+// Answer: Correct! JSX is compiled to code read-able by a browser.
+
+
+// 9: What problem does the virtual DOM attempt to solve?
+
+// Answer: Correct! Manipulating the virtual DOM is much faster, because it finds out exactly which objects have changed, and only those objects get updated on the DOM.
