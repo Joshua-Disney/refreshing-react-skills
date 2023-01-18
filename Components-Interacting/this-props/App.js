@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Greeting } from './Greeting'
+import { Greeting } from './Greeting';
 
 class App extends React.Component {
   render() {
@@ -9,9 +9,9 @@ class App extends React.Component {
         <h1>
           Hullo and, "Welcome to The Newzz," "On Line!"
         </h1>
-        <Greeting name='Diszey' />
+        <Greeting name="My Dude" signedIn={true} />
         <article>
-          Latest newzz:  where is my phone?
+          Latest:  where is my phone?
         </article>
       </div>
     );
