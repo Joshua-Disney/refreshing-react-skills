@@ -10,7 +10,7 @@ class BigButton extends React.Component {
 
 
 // Example 1
-<BigButton>
+{/* <BigButton>
   I am a child of BigButton.
 </BigButton>
 
@@ -22,4 +22,4 @@ class BigButton extends React.Component {
 
 
 // Example 3
-<BigButton />
+<BigButton /> */}
