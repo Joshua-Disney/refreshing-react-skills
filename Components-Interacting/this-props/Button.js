@@ -1,11 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-export class Button extends React.Component {
+class Button extends React.Component {
   render() {
     return (
-      <button onClick={this.props.onClick}>
-        Click me!
+      <button>
+        {this.props.text}
       </button>
     );
   }
 }
+
+// defaultProps goes here:
+Button.defaultProps = {text: 'I am a button'}
+
+ReactDOM.render(
+  // <Button text=''/>, 
+  <Button />,
+  document.getElementById('app')
+);
