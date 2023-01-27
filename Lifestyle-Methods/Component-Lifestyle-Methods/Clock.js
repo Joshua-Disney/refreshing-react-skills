@@ -15,17 +15,7 @@ export class Clock extends React.Component {
       </div>
     );
   }
-  componentDidMount() {
-    const oneSecond = 1000;
-    this.intervalID = setInterval(() => {
-      this.setState({ date: new Date() });
-    }, oneSecond);
-  }
-  componentDidUpdate(prevProps) {
-    if (this.props.isPrecise === prevProps.isPrecise) {
-      return;
-    }
-    clearInterval(this.intervalID)
+  startInterval() {
     let delay;
     if (this.props.isPrecise === true) {
       delay = 100
@@ -35,6 +25,16 @@ export class Clock extends React.Component {
     this.intervalID = setInterval(() => {
       this.setState({ date: new Date() });
     }, delay);
+  }
+  componentDidMount() {
+    this.startInterval()
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.isPrecise === prevProps.isPrecise) {
+      return;
+    }
+    clearInterval(this.intervalID)
+    this.startInterval()
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
