@@ -19,6 +19,17 @@ export class Profile extends React.Component {
     this.loadUserData()
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.username !== prevProps.username) {
+      cancelFetch(this.fetchID)
+      this.loadUserData()
+    }
+  }
+
+  componentWillUnmount() {
+    cancelFetch(this.fetchID)
+  }
+
   render() {
     const isLoading = this.state.userData === null
 
