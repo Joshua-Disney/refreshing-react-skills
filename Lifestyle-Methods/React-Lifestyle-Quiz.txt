@@ -1,0 +1,94 @@
+React Lifestyle Quiz
+
+9/11 81%
+
+
+
+
+1: Which of these lifecycle methods is called during the updating phase?
+
+Answer: componentDidUpdate() is called during the update phase.
+
+
+2: A new React component is added to the DOM for the first time. What phase of the component lifecycle is this?
+
+Answer: Mounting occurs when a component is first set up.
+
+
+3: Which of these lifecycle methods is called during the unmounting phase?
+
+Answer: componentWillUnmount() is called during the unmounting phase.
+
+
+4: True or false: the constructor is a good place to set up side-effects in a component.
+
+Answer: If you want to set up side-effects when a component mounts, use componentDidMount().
+
+
+5: A React component’s props change. What lifecycle phase will it enter?
+
+Answer: When a component’s state or props change, it will update.
+
+
+6: A React component is removed from the DOM. What phase of the component lifecycle is this?
+
+Answer: A component unmounts when it is removed from the DOM.
+
+
+7: During which phase or phases is render() called?
+
+Correct Answer:  During mounting and updating
+My Answer: During all three phases
+
+
+8: Which of these is NOT a phase of a React component’s lifecycle?
+
+Answer: Rendering happens during a component’s lifecycle, but it is not a lifecycle phase.
+
+
+9: Several methods are called during the mounting phase. Which of these is the correct order?
+
+Correct Answer: The component instance is constructed, then rendered. Once rendering is done, componentDidMount() is called.
+My Answer: constructor(), componentDidMount(), render()
+
+
+10: Which of these lifecycle methods is called ONLY during the mounting phase?
+
+Answer: componentDidMount() is the last method called during the mounting phase.
+
+
+11: Fill in the code so that the component will clean up properly.
+
+import React from 'react';
+ 
+class Countdown extends React.Component {
+  constructor(props) {
+    super(props);
+ 
+    const now = Date.now();
+    const oneMinuteFromNow = now + 1000 * 60;
+    this.state = {
+      now,
+      countdownTo: oneMinuteFromNow,
+    };
+  }
+ 
+  componentDidMount() {
+    this.intervalID = setInterval(() => {
+      this.setState({ now: Date.now() });
+    }, 1000);
+  }
+ 
+   {
+    clearInterval(this.intervalID);
+  }
+ 
+  render() {
+    const secondsLeft = Math.floor(
+      (this.state.countdownTo - this.state.now) / 1000
+    );
+    return <div>{secondsLeft}s left</div>;
+  }
+}
+
+Answer: componentWillUnmount()
