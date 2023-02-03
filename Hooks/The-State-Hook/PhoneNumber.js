@@ -12,6 +12,7 @@ export default function PhoneNumber() {
     const isValid = validPhoneNumber.test(newPhone);
     if (isValid) {
         // update state 
+        setPhone(newPhone)
     }
     // just ignore the event, when new value is invalid
   };
@@ -19,7 +20,7 @@ export default function PhoneNumber() {
   return (
     <div className='phone'>
       <label for='phone-input'>Phone: </label>
-      <input id='phone-input' />
+      <input id='phone-input' value={phone} onChange={handleChange} />
     </div>
   );
 }
