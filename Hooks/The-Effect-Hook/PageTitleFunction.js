@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
- 
-export default function PageTitle() {
-  const [name, setName] = useState('');
- 
- useEffect(() => {
-    document.title = `Hi, ${name}`;
-  }, [name]);
- 
+
+export default function Counter() {
+  const [clickCount, setClickCount] = useState(0);
+
+  // your code here
+  const increment = () => {
+    setClickCount((prevClickCount) => prevClickCount + 1)
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', increment)
+    return () => {
+      document.removeEventListener('mousedown', increment)
+    }
+  })
+  
   return (
-    <div>
-      <p>Use {name} input field below to rename this page!</p>
-      <input 
-        onChange={({target}) => setName(target.value)} 
-        value={name} 
-        type='text' />
-    </div>
+      <h1>Document Clicks: {clickCount}</h1>
   );
 }
+
