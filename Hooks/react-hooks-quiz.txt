@@ -1,0 +1,122 @@
+Quiz Summary
+83% Great job!
+10 correct
+2 to work on
+
+
+
+1: Which of the options would best complete the code below?
+
+function Counter({ initialCount }) {
+ const [count, setCount] = useState(initialCount);
+ const increment = () => ;
+ return (
+   <>
+     Count: {count}
+     <button onClick={increment}>+</button>
+   </>
+ );
+}
+
+Answer: setCount(prevCount => prevCount + 1)
+
+
+
+2: Complete the code below to fetch and render data from a server.
+
+function FetchAndViewData({ endpoint }) {
+    
+    
+        
+    
+   return <div>{JSON.stringify(data, '', 2)}</div>;
+}
+ 
+Answer: const [data, setData] = useState(null)
+    useEffect(() => {
+        get(endpoint).then((response) => setData(response.data))
+    }, [endpoint])
+
+
+
+3: Suppose you had a function called unsubscribe() that stopped a component from receiving updates from an external API. 
+It is important that this function be called before the component unmounts from the DOM.
+
+Where in a function component should we call unsubscribe() to accomplish this goal?
+
+Answer: In a cleanup function, returned by the first function of the Effect Hook
+
+
+
+4: Complete the code below to react to 'mousedown' events on the document element.
+
+function DocumentClicks() {
+  const [clicks, setClicks] = useState(0);
+  const increment = () => setClicks((prev) => prev + 1);
+  useEffect(() => {
+    
+    
+  
+  return <span>{clicks}</span>;
+}
+
+Answer: document.addEventListener('mousedown', 'increment')
+return () => document.removeEventListener('mousedown', 'increment')
+}, [])
+
+
+
+5: Which of the import statements allow a function component to use the State and Effect Hooks to generate dynamic JSX?
+
+Answer: import React, { useState, useEffect } from 'react'
+
+
+
+6: Let’s define a component that uses:
+
+    an event listener on the document element to track mouse position
+    a network request to fetch JSON data from a server
+    state to track both of these values between renders
+
+Which of the following patterns gives us the greatest separation of concerns?
+
+Correct Answer: Use and State and Effect Hook for managing the position data, then another State and Effect Hook for managing
+the JSON data.
+
+
+
+7: Which of these is NOT a reason for using Hooks?
+
+Answer: To use Lifecycle Methods like componentDidMount()
+
+
+
+8: Which event handler best accomplishes the goal of adding a clicked item to an array state variable?
+
+Answer: const addItem = (({target}) => {
+    setItems((prev) => [target.value, ...prev])
+})
+
+
+
+9: What is the second argument passed to useEffect() used for?
+
+Answer: To configure when React calls our effect.
+
+
+
+10: Which of the following are optional when using the Effect Hook?
+
+Answer: cleanup function and dependency array
+
+
+
+11: What type(s) of React Component definitions can we use Hooks with?
+
+Answer: Function components
+
+
+
+12: Which of the following dependency arrays would cause an effect to be called only after the first render?
+
+Answer: useEffect(effectCallback, [])
