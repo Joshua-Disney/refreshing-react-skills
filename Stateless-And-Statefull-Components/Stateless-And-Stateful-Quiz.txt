@@ -1,0 +1,124 @@
+Quiz Summary
+90% Great job!
+
+
+
+1: Which is a correct example of a method that could be used as an event handler?
+
+Correct Answer: Event handlers are defined as methods on a component class.
+
+
+
+2: If a user clicks on the button, what ARGUMENT will be passed to logger?
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+ 
+class Example extends React.Component {
+  logger(param) {
+    console.log(param);
+  },
+ 
+  render() {
+    return <button onClick={this.logger}></button>;
+  }
+});
+ 
+ReactDOM.render(<Example />, document.getElementById('app'));
+
+Answer: An event object, because logger is being used as an event handler.
+
+
+
+3: Stateful <Forest /> passes a prop to the named export Tree. Which line of code is necessary?
+
+Answer: import { Tree } from './Tree'
+
+
+
+4: Fill in the blank, so that stateful <Forest /> passes its type state to stateless <Tree />.
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+import { Tree } from './Tree';
+ 
+class Forest extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: 'redwood'
+    }
+  },
+ 
+  render() {
+    ___
+  }
+}
+ 
+ReactDOM.render(
+  <Forest />,
+  document.getElementById('app')
+);
+
+Answer: return <Tree type={this.state.type} />
+
+
+
+5: In the programming pattern that you just learned, what are the roles of the three component classes?
+
+Answer: A stateful component class stores information as state
+A stateles component class displays that state
+A different stateles component class displays a way to change that state
+
+
+
+6: What will this equal in updateFunction when a user clicks on the ChildExample rendered below?
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+ 
+class ParentExample extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.updateFunction = this.updateFunction.bind(this);
+  }
+ 
+  updateFunction(updatedValue) {
+    this.setState({value: updatedValue});
+  },
+ 
+  render() {
+    return <ChildExample onClick={this.updateFunction} />;
+  }
+});
+ 
+ReactDOM.render(<ParentExample />, document.getElementById('app'));
+
+Answer: The ParentExample that render the clicked ChildExample
+
+
+
+7: What’s the point of stateless components inheriting from stateful components?
+
+Answer: It's a commont pattern used by React programmers.  Breaking down complex logic into separate classes 
+that each have one job to do helps with testing and makes code more reusable
+
+
+
+8: Stateful <Forest /> is trying to pass a prop to stateless <Tree />. Assuming these components are in different 
+files, which of the following options should be the first line of the Tree class?
+
+Answer: export class Tree extends React.Component
+
+
+
+9: Which is necessary, in order for a stateless child component to update the state of its parent?
+
+Answer: A parent must define a function that contains this.setState()
+
+
+
+10: What is a necessary part of any “stateful” component?
+
+Answer: An initialization of state in the component's constructor
