@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const styleMe = <h1>Please style me! I am so bland!</h1>;
+const styles = {
+  background: 'lightblue',
+  color: 'darkred',
+  marginTop: 100,
+  fontSize: 50
+}
+
+const styleMe = <h1 style={styles}>Please style me! I am so bland!</h1>;
 
 ReactDOM.render(
 	styleMe, 
