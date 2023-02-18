@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { GuineaPigs } from '../components/GuineaPigs';
 
 const GUINEAPATHS = [
   'https://content.codecademy.com/courses/React/react_photo-guineapig-1.jpg',
@@ -8,7 +9,7 @@ const GUINEAPATHS = [
   'https://content.codecademy.com/courses/React/react_photo-guineapig-4.jpg'
 ];
 
-export class GuineaPigs extends React.Component {
+class GuineaPigsContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,15 +37,12 @@ export class GuineaPigs extends React.Component {
   render() {
     let src = GUINEAPATHS[this.state.currentGP];
     return (
-      <div>
-        <h1>Cute Guinea Pigs</h1>
-        <img src={src} />
-      </div>
+      <GuineaPigs src={src}/>
     );
   }
 }
 
 ReactDOM.render(
-  <GuineaPigs />, 
+  <GuineaPigsContainer />, 
   document.getElementById('app')
 );
