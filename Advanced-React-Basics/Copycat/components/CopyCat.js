@@ -21,7 +21,7 @@ export class CopyCat extends React.Component {
           onClick={toggleTape}
           style={styles.imgStyles}
         />
-        <p>{copying === true ? value.diplay = true && value.display = false}</p>
+        <p>{copying === true ? value.diplay = true : value.display = false}</p>
       </div>
     );
   };
