@@ -13,7 +13,7 @@ class CopyCatContainer extends React.Component {
     super(props);
 
     this.state = { 
-      copying: true,
+      copying: false,
       input: ''
     };
 
@@ -33,7 +33,7 @@ class CopyCatContainer extends React.Component {
     return (
       <CopyCat 
         copying={this.state.copying} 
-        input={this.state.input}
+        value={this.state.input}
         images={images}
         toggleTape={this.toggleTape} 
         handleChange={this.handleChange}

@@ -1,11 +1,10 @@
 import React from 'react';
 import { styles } from '../styles'
+import PropTypes from 'prop-types'
 
 export class CopyCat extends React.Component {
   
   render() {
-    const copying = this.props.copying;
-    const toggleTape = this.props.toggleTape
     
     return (
       <div style={styles.divStyles}>
@@ -17,11 +16,11 @@ export class CopyCat extends React.Component {
         />
         <img 
           alt='cat'
-          src={copying ? this.props.images.copycat : this.props.images.quietcat}
-          onClick={toggleTape}
+          src={this.props.copying ? this.props.images.copycat : this.props.images.quietcat}
+          onClick={this.props.toggleTape}
           style={styles.imgStyles}
         />
-        <p>{copying === true ? value.diplay = true : value.display = false}</p>
+        {this.props.copying && <p>{this.props.value}</p>}
       </div>
     );
   };
