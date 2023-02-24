@@ -1,0 +1,67 @@
+Quiz Summary 8/9
+88% Great job!
+
+
+
+1: Which is NOT a fact about propTypes?
+
+Answer: Correct! propTypes do not automatically call the render function.
+
+
+
+2: How is a form in a React app different than a form in a vanilla JavaScript app?
+
+Answer: Correct! A React form uses event handlers that notify the server about all changes in the form as soon as they happen.
+
+
+
+3: Why does the expression have double curly braces?
+
+<div style={{ background: 'blue' }}></div>
+
+Answer: Correct! Because an object literal is being injected into JSX.
+
+
+
+4: A presentational component’s job is to…
+
+Answer: Correct! Render HTML-like JSX
+
+
+
+5: How do you write ‘margin-top: 10px’ in React?
+
+Answer: Correct! You don’t need to specify px as the unit. React automatically interprets numeric values as pixel values.  {marginTop: 10}
+
+
+
+6: Why does this expression have double curly braces?
+
+const style = {
+  background: 'blue'
+};
+ 
+<div style={{style}}></div>
+
+Answer: Correct! The expression should not have double curly braces because it is an object.
+
+
+
+7: Why is “separating container components from display components” a useful strategy?
+
+Correct Answer: All the below
+* It will help you understand React apps that you encounter in the real world
+* It will help you know when a component has too many responsibilities
+* If a component has too many responsibilities, it will help you break it into smaller components
+
+
+
+8: What is the purpose of propTypes?
+
+Answer: Correct! To document and validate props.
+
+
+
+9: A container component’s job is to…
+
+Answer: Correct! Manage state, make calculations based on props, or handle other complex logic
